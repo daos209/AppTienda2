@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar> 
+    <app-company-name [companyName]="'Frutix'"></app-company-name>
+    <ion-buttons slot="end">
+        <ion-menu-button menu="mainMenu"></ion-menu-button>
+   </ion-buttons>  
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding"> 
+
+    <!-- Imagen de usuario y mensaje de bienvenida -->
+    <div class="user-info">
+      <img [src]="profileImage" alt="User Avatar" class="user-avatar" />
+      <h2><strong>{{ bienvenidos }}</strong><br/> {{ email }}</h2>
+      <span></span>
+    </div>
+  
+
+    <div class="ofertas-info"> 
+      <h2>Ofertas</h2>
+    </div>
+
+    <!-- Cards de Ofertas -->
+    <ion-card>
+      <img src="../../assets/img/polera.jpg" alt="Polera" />
+      <ion-card-header>
+        <ion-card-title>Polera</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Modelo urbano para el verano.
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <img src="../../assets/img/cortaviento.jpeg" alt="cortaviento" />
+      <ion-card-header>
+        <ion-card-title>cortaviento</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        vestimenta para el verano .
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <img src="../../assets/img/mangacorta.jpg" alt="Polera" />
+      <ion-card-header>
+        <ion-card-title>Verano</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        ideales para el verano.
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="success" (click)="openWhatsApp()">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+  </ion-content>
+  <!-- Move this section to a new component or page -->

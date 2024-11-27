@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="title_tab">
+    <h2>Productos</h2>
+  </div>
+
+  <ion-list class="transparent-list">
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>Precio por unidad: {{ producto.precio | currency }}</p>
+      </ion-label>
+      <div class="content_img">
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="product-image" />
+      </div>
+      <ion-button fill="outline" slot="end" (click)="agregarAlCarrito(producto)">
+        Agregar al carrito
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<style>
+  .title_tab {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .transparent-list {
+    --ion-background-color: transparent;
+  }
+
+  .content_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+  .product-image {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+  }
+</style>

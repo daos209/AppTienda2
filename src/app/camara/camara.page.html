@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>camara</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu" aria-label="Abrir menú principal"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <ion-button expand="full" (click)="captureImage()" aria-label="Capturar imagen">
+      Capturar Imagen
+    </ion-button>
+
+    <div *ngIf="capturedImage" class="image-container">
+      <img [src]="capturedImage" alt="Imagen capturada por la cámara" />
+      <ion-button expand="full" color="danger" (click)="deleteImage()" aria-label="Eliminar imagen">
+      Eliminar Imagen
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
